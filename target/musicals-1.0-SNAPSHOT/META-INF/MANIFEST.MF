@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Created-By: IntelliJ IDEA
+Built-By: babae
+Build-Jdk: version 11.0.9
+Implementation-Title: musicals
+Implementation-Version: 1.0-SNAPSHOT
+Implementation-Vendor-Id: com.example
+Main-Class: ${start-class}
+
