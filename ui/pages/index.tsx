@@ -4,13 +4,14 @@ import { Button } from "@mantine/core";
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
 import { Key } from "react";
+import { Temporal } from "@js-temporal/polyfill";
 
 interface Post {
-  id: String;
-  title: String;
-  type: String;
-  author: String;
-  createdDate: String;
+  id: string;
+  title: string;
+  type: string;
+  author: string;
+  createdDate: string;
 }
 
 interface Props {
@@ -51,7 +52,10 @@ const Home: NextPage<Props> = ({ posts }) => {
                 <span className="text-blue-500">{post.type.toUpperCase()}</span>
               </h3>
               <p className="text-gray-500">
-                {post.author} - {post.createdDate}
+                {post.author} -{" "}
+                {Temporal.PlainDate.from(post.createdDate).toLocaleString(
+                  "cs-CZ"
+                )}
               </p>
             </div>
           ))}
@@ -80,7 +84,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      posts: data.posts.slice(0, 4),
+      posts: data.posts,
     },
   };
 }

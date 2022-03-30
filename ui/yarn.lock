@@ -382,6 +382,14 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
+"@js-temporal/polyfill@^0.4.0":
+  "integrity" "sha512-j6DwrVV5e2fj3pdXXx6e4ol9/VWg+hX54xOUJjNx+PekzWdjkVzBLpttPNczFcY1W0SFv2ovxrsz/OB4SzIALA=="
+  "resolved" "https://registry.npmjs.org/@js-temporal/polyfill/-/polyfill-0.4.0.tgz"
+  "version" "0.4.0"
+  dependencies:
+    "jsbi" "^4.1.0"
+    "tslib" "^2.3.1"
+
 "@mantine/core@^4.1.0", "@mantine/core@4.1.0":
   "integrity" "sha512-uEHGssKveDgGHhbBrgVqp8o12m0oQGLBKH3D8bkrca1GB905ZHuj8CG+i/ojBhqdalfUwqcYGRpwwALtD+XfJg=="
   "resolved" "https://registry.npmjs.org/@mantine/core/-/core-4.1.0.tgz"
@@ -1906,6 +1914,11 @@
   dependencies:
     "argparse" "^2.0.1"
 
+"jsbi@^4.1.0":
+  "integrity" "sha512-JzhwPkH7Ra8O1b5uHmWxl6N8ZumqGvMXgpKcsq0/iWlnB+KkzbekCIcLl3hu3sFGTLNXAuXIqY4STtE0ZfT1zA=="
+  "resolved" "https://registry.npmjs.org/jsbi/-/jsbi-4.2.0.tgz"
+  "version" "4.2.0"
+
 "jsesc@^2.5.1":
   "integrity" "sha512-OYu7XEzjkCQ3C5Ps3QIZsQfNpqoJyZZA99wd9aWd05NCtC5pWOkShK2mkL6HXQR6/Cy2lbNdPlZBpuQHXE63gA=="
   "resolved" "https://registry.npmjs.org/jsesc/-/jsesc-2.5.2.tgz"
@@ -2756,6 +2769,11 @@
   "version" "2.3.1"
 
 "tslib@^2.3.0":
+  "integrity" "sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw=="
+  "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.3.1.tgz"
+  "version" "2.3.1"
+
+"tslib@^2.3.1":
   "integrity" "sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw=="
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.3.1.tgz"
   "version" "2.3.1"
