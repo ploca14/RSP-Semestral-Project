@@ -1,23 +1,23 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
+import type { NextPage } from "next";
+import Head from "next/head";
 import { Button } from "@mantine/core";
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
 import { Key } from "react";
 
 interface Post {
-  id: String,
-  title: String,
-  type: String,
-  author: String,
-  createdDate: String,
+  id: String;
+  title: String;
+  type: String;
+  author: String;
+  createdDate: String;
 }
 
 interface Props {
-  posts: Array<Post>
+  posts: Array<Post>;
 }
 
-const Home: NextPage<Props> = ({posts}) => {
+const Home: NextPage<Props> = ({ posts }) => {
   return (
     <div className="px-8">
       <Head>
@@ -26,47 +26,56 @@ const Home: NextPage<Props> = ({posts}) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="min-h-screen py-16 flex-1 flex flex-col justify-center items-center">
+      <main className="flex min-h-screen flex-1 flex-col items-center justify-center py-16">
         <h1 className="m-0 text-6xl">
-          Welcome to <a href="https://nextjs.org" className="text-blue-500 hover:underline">Next.js!</a>
+          Welcome to{" "}
+          <a
+            href="https://nextjs.org"
+            className="text-blue-500 hover:underline"
+          >
+            Next.js!
+          </a>
         </h1>
-        <Button component="a" className="mt-10" size="lg" href="#">Get started</Button>
+        <Button component="a" className="mt-10" size="lg" href="#">
+          Get started
+        </Button>
 
-        <div className="grid gap-4 grid-cols-2 mt-10 max-w-screen-lg">
+        <div className="mt-10 grid max-w-screen-lg grid-cols-2 gap-4">
           {posts.map((post: Post) => (
-              <div
-                key={post.id as Key}
-                className="border-2 border-solid border-gray-200 rounded-lg p-4 flex flex-col justify-between"
-              >
-                <h3 className="mb-4">
-                  {post.title} | <span className="text-blue-500">{post.type.toUpperCase()}</span>
-                </h3>
-                <p className="text-gray-500">
-                  {post.author} - {post.createdDate}
-                </p>
-              </div>
+            <div
+              key={post.id as Key}
+              className="flex flex-col justify-between rounded-lg border-2 border-solid border-gray-200 p-4"
+            >
+              <h3 className="mb-4">
+                {post.title} |{" "}
+                <span className="text-blue-500">{post.type.toUpperCase()}</span>
+              </h3>
+              <p className="text-gray-500">
+                {post.author} - {post.createdDate}
+              </p>
+            </div>
           ))}
         </div>
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
 
 export async function getStaticProps() {
   const { data } = await client.query({
     query: gql`
-        query {
-          posts {
-            id,
-            title,
-            author,
-            createdDate,
-            type
-          }
+      query {
+        posts {
+          id
+          title
+          author
+          createdDate
+          type
         }
-      `,
+      }
+    `,
   });
 
   return {
