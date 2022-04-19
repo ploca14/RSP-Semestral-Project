@@ -9,7 +9,6 @@ import cvut.rsp.enums.MusicalGenre;
 import cvut.rsp.enums.MusicalType;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
@@ -21,9 +20,6 @@ public class Musical extends AbstractEntity
     private String name;
 
     private String description;
-
-    @Column(name = "date", columnDefinition = "DATE")
-    private LocalDate date;
 
     @ManyToOne
     @JoinColumn(name = "theatre_id")
@@ -63,8 +59,6 @@ public class Musical extends AbstractEntity
     public void setName(String name) { this.name = name; }
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }
-    public LocalDate getDate() { return date; }
-    public void setDate(LocalDate date) { this.date = date; }
     public Theatre getTheatre() { return theatre; }
     public void setTheatre(Theatre theatre) { this.theatre = theatre; }
     public List<Performance> getPerformances() { return performances; }
