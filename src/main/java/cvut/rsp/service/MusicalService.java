@@ -1,10 +1,10 @@
 package cvut.rsp.service;
 
-import cvut.rsp.api.IFilterService;
-import cvut.rsp.api.IMusicalService;
-import cvut.rsp.api.IPreferenceService;
+import cvut.rsp.api.service.IFilterService;
+import cvut.rsp.api.service.IMusicalService;
+import cvut.rsp.api.service.IPreferenceService;
 import cvut.rsp.dao.entity.Musical;
-import cvut.rsp.dao.entity.Preference;
+import cvut.rsp.graphql.input.PreferenceInput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,31 +17,30 @@ public class MusicalService implements IMusicalService
     @Autowired private IPreferenceService iPreferenceService;
     @Autowired private IFilterService iFilterService;
 
-    @Transactional(readOnly = true)
-    @Override public List<Musical> getMusicals() { return getMusicals(null); }
+    private static Integer LIMIT = 10;
 
-    /***
-     * If argument is equal to null, then return value is random musicals
-     * Else service returns musicals filtered by preference
-     *
-     * @param userPreference
-     * @return
-     */
     @Transactional(readOnly = true)
-    @Override public List<Musical> getMusicals(Preference userPreference)
+    @Override public Musical getMusical(Long id) { return iFilterService.filter(id); }
+
+    @Transactional(readOnly = true)
+    @Override public List<Musical> getMusicals(Integer limit) { return randomMusicals(LIMIT); }
+
+    @Transactional(readOnly = true)
+    @Override public List<Musical> getMusicals(PreferenceInput preferenceInput)
     {
-        if(userPreference == null) { return randomMusicals(); }
+        if(preferenceInput == null) { return randomMusicals(LIMIT); }
 
-        var musicals = iFilterService.filter(userPreference);
+        var musicals = iFilterService.filter(preferenceInput);
 
-        //TODO: if musicals == null -> Choose random musicals;
+        if(musicals == null) { return randomMusicals(LIMIT); }
+        if(musicals.isEmpty()) { return randomMusicals(LIMIT); }
 
         return musicals;
     }
 
     //TODO: Implement random filtering
-    private List<Musical> randomMusicals()
+    private List<Musical> randomMusicals(Integer limit)
     {
-        return null;
+        return iFilterService.filterRandom(limit);
     }
 }

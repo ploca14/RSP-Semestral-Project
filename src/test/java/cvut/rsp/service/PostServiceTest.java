@@ -1,7 +1,7 @@
 package cvut.rsp.service;
 
+import cvut.rsp.api.repository.IPostRepository;
 import cvut.rsp.dao.entity.Post;
-import cvut.rsp.dao.repository.IPostRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.*;

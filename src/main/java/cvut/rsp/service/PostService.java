@@ -1,8 +1,8 @@
 package cvut.rsp.service;
 
-import cvut.rsp.api.IPostService;
+import cvut.rsp.api.service.IPostService;
 import cvut.rsp.dao.entity.Post;
-import cvut.rsp.dao.repository.IPostRepository;
+import cvut.rsp.api.repository.IPostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

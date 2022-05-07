@@ -1,4 +1,4 @@
-package cvut.rsp.dao.repository;
+package cvut.rsp.api.repository;
 
 import cvut.rsp.dao.entity.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
