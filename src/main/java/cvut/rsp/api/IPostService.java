@@ -1,4 +1,4 @@
-package cvut.rsp.service;
+package cvut.rsp.api;
 
 import cvut.rsp.dao.entity.Post;
 

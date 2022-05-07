@@ -1,0 +1,8 @@
+type Seat
+{
+    id: ID!,
+    row: Int,
+    number: Int,
+    available: Boolean,
+    ticket: Ticket
+}

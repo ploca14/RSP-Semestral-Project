@@ -1,0 +1,31 @@
+type Query
+{
+#   [Test] Return all posts
+    posts: [Post!]!
+#   [Test] Return post by id
+    post(id: ID): Post
+
+    actors: [Actor!]!
+    actor(id: ID): Actor
+
+    directors: [Director!]!
+    director(id: ID): Director
+
+    musicals: [Musical!]!
+    musical(id: ID): Musical
+    musicalsByPreference(preference: String!): [Musical!]!
+    filter(preference: String!): [Musical!]!
+
+    preferences: [Preference!]!
+    preference(id: ID): Preference
+#    Mutation?
+    updatePreference(id: ID): Preference
+
+    producers: [Producer!]!
+    producer(id: ID): Producer
+
+    musicalAtmospheres: [MusicalAtmosphere!]!
+    musicalGenres: [MusicalGenre!]!
+    musicalTypes: [MusicalType!]!
+    personTypes: [PersonType!]!
+}

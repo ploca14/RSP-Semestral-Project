@@ -1,0 +1,7 @@
+type Address
+{
+    id: ID!,
+    city: String,
+    street: String,
+    postCode: Int
+}

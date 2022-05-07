@@ -1,0 +1,9 @@
+type Actor
+{
+    id: ID!,
+    firstName: String!,
+    lastName: String!,
+    birthDate: String,
+    preferences: [Preference]!,
+    musicals: [Musical]!
+}

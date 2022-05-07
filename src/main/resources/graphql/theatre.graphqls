@@ -1,0 +1,8 @@
+type Theatre
+{
+    id: ID!,
+    name: String,
+    webURL: String,
+    address: Address,
+    musicals: [Musical]!
+}

@@ -1,0 +1,10 @@
+type Preference
+{
+    id: ID!,
+    producers: [Producer]!,
+    actors: [Actor]!,
+    directors: [Director]!,
+    musicalTypes: [MusicalType]!,
+    musicalGenres: [MusicalGenre]!,
+    musicalAtmospheres: [MusicalAtmosphere]!
+}

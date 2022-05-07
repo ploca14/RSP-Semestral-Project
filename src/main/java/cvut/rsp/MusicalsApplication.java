@@ -1,6 +1,7 @@
 package cvut.rsp;
 
-import cvut.rsp.service.IPostService;
+import cvut.rsp.api.IPreferenceService;
+import cvut.rsp.api.IPostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -11,6 +12,7 @@ public class MusicalsApplication implements CommandLineRunner
 {
     @Autowired
     IPostService iService;
+    IPreferenceService iPService;
 
     public static void main(String[] args)
     {

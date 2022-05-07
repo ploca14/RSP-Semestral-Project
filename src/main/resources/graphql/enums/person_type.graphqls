@@ -1,0 +1,6 @@
+enum PersonType
+{
+    PRODUCER,
+    ACTOR,
+    DIRECTOR
+}

@@ -1,0 +1,7 @@
+type Ticket
+{
+    id: ID!,
+    price: Float,
+    seat: Seat,
+    performance: Performance
+}

@@ -2,7 +2,7 @@ package cvut.rsp.graphql.query;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import cvut.rsp.dao.entity.Post;
-import cvut.rsp.service.IPostService;
+import cvut.rsp.api.IPostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

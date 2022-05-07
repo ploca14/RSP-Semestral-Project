@@ -1,0 +1,14 @@
+type Musical
+{
+    id: ID!,
+    imageSource: String,
+    name: String,
+    theatre: Theatre,
+    performances: [Performance]!,
+    producers: [Producer]!,
+    actors: [Actor]!,
+    directors: [Director]!,
+    musicalTypes: [MusicalType]!,
+    musicalGenres: [MusicalGenre]!,
+    musicalAtmospheres: [MusicalAtmosphere]!
+}
