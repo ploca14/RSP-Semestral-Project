@@ -10,11 +10,11 @@ public abstract class AbstractEntity implements Serializable
 {
     @Id
     @GeneratedValue
-    protected Integer id;
+    protected Long id;
 
     //#region getters and setters
-    public Integer getId() { return id; }
-    public void setId(Integer id) { this.id = id; }
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
     //#endregion
 }
 

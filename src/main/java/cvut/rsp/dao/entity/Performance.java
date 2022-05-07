@@ -10,7 +10,7 @@ import java.util.List;
 public class Performance extends AbstractEntity
 {
     @OneToMany(mappedBy = "performance")
-    private List<Ticket> ticket;
+    private List<Ticket> tickets;
 
     @ManyToMany
     @JoinTable(name = "musicals", joinColumns = @JoinColumn(name = "performance_id"), inverseJoinColumns = @JoinColumn(name = "musical_id"))
@@ -20,8 +20,8 @@ public class Performance extends AbstractEntity
     private LocalDate date;
 
     //region getters and setters
-    public List<Ticket> getTicket() { return ticket; }
-    public void setTicket(List<Ticket> ticket) { this.ticket = ticket; }
+    public List<Ticket> getTickets() { return tickets; }
+    public void setTickets(List<Ticket> tickets) { this.tickets = tickets; }
     public List<Musical> getMusicals() { return musicals; }
     public void setMusicals(List<Musical> musicals) { this.musicals = musicals; }
     public LocalDate getDate() { return date; }
