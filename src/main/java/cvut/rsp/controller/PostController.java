@@ -1,7 +1,7 @@
 package cvut.rsp.controller;
 
 import cvut.rsp.dao.entity.Post;
-import cvut.rsp.api.IPostService;
+import cvut.rsp.api.service.IPostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.SchemaMapping;

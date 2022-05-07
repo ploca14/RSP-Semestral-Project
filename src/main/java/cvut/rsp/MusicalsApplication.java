@@ -1,7 +1,7 @@
 package cvut.rsp;
 
-import cvut.rsp.api.IPreferenceService;
-import cvut.rsp.api.IPostService;
+import cvut.rsp.api.service.IPostService;
+import cvut.rsp.api.service.IPreferenceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

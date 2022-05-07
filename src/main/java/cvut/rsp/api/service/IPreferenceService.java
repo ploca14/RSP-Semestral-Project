@@ -1,4 +1,4 @@
-package cvut.rsp.api;
+package cvut.rsp.api.service;
 
 import cvut.rsp.dao.entity.Preference;
 import cvut.rsp.dao.entity.people.Actor;

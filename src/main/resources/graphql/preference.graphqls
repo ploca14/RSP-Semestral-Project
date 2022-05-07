@@ -8,3 +8,10 @@ type Preference
     musicalGenres: [MusicalGenre]!,
     musicalAtmospheres: [MusicalAtmosphere]!
 }
+
+input PreferenceInput
+{
+    musicals: [Int!]!
+    actors: [Int!]!
+    withChildren: Boolean
+}

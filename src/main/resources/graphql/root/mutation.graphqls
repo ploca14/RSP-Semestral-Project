@@ -1,14 +1,8 @@
 type Mutation
 {
-#   [Test] Create post
-    createPost(title: String!, author: String!, type: String): Post
-
     createActor(firstName: String!, lastName: String!, birthDate: String): Actor
-
     createDirector(firstName: String!, lastName: String!, birthDate: String): Director
-
     createPreference(producers: String!, actors: String!, directors: String!, musicalTypes: String, musicalGenres: String, musicalAtmospheres: String): Preference
-
     createProducer(firstName: String!, lastName: String!, birthDate: String): Producer
 
     createMusicalAtmosphere(value: String!): MusicalAtmosphere

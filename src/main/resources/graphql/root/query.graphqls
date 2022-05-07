@@ -1,31 +1,35 @@
 type Query
 {
-#   [Test] Return all posts
     posts: [Post!]!
-#   [Test] Return post by id
     post(id: ID): Post
 
+
+    musicalById(id: ID): Musical!
+
+    musicals(limit:Int): [Musical!]!
+
+    musicalsByPreference(preference: PreferenceInput): [Musical!]!
+
     actors: [Actor!]!
-    actor(id: ID): Actor
-
     directors: [Director!]!
-    director(id: ID): Director
-
-    musicals: [Musical!]!
-    musical(id: ID): Musical
-    musicalsByPreference(preference: String!): [Musical!]!
-    filter(preference: String!): [Musical!]!
-
-    preferences: [Preference!]!
-    preference(id: ID): Preference
-#    Mutation?
-    updatePreference(id: ID): Preference
-
     producers: [Producer!]!
-    producer(id: ID): Producer
 
-    musicalAtmospheres: [MusicalAtmosphere!]!
-    musicalGenres: [MusicalGenre!]!
-    musicalTypes: [MusicalType!]!
-    personTypes: [PersonType!]!
+#    actor(id: ID): Actor
+#    director(id: ID): Director
+#    producer(id: ID): Producer
+#
+#    musicals: [Musical!]!
+#    musical(id: ID): Musical
+#    musicalsByPreference(preference: String!): [Musical!]!
+#    filter(preference: String!): [Musical!]!
+#
+#    preferences: [Preference!]!
+#    preference(id: ID): Preference
+##    Mutation?
+#    updatePreference(id: ID): Preference
+#
+#    musicalAtmospheres: [MusicalAtmosphere!]!
+#    musicalGenres: [MusicalGenre!]!
+#    musicalTypes: [MusicalType!]!
+#    personTypes: [PersonType!]!
 }
