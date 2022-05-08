@@ -1,13 +1,15 @@
 import { faker } from "@faker-js/faker";
 
 export interface Actor {
-  id: number;
-  name: string;
+  id: string;
+  firstName: string;
+  lastName: string;
 }
 
 export function generateFakeData(): Actor {
   return {
-    id: faker.unique(faker.datatype.number),
-    name: faker.name.findName(),
+    id: faker.unique(faker.datatype.number).toString(),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
   };
 }

@@ -17,18 +17,16 @@
     "nuxt": "3.0.0-rc.1"
   },
   "dependencies": {
-    "@apollo/client": "^3.6.1",
     "@heroicons/vue": "^1.0.6",
     "@pinia/nuxt": "^0.1.8",
     "@types/faker": "^6.6.9",
-    "@vue/apollo-composable": "^4.0.0-alpha.16",
-    "@vue/apollo-option": "^4.0.0-alpha.16",
-    "@vue/apollo-ssr": "^4.0.0-alpha.16",
     "@vueuse/core": "^8.3.1",
     "graphql": "^16.4.0",
     "graphql-tag": "^2.12.6",
+    "nuxt-graphql-client": "^0.0.24",
     "pinia": "^2.0.13",
     "pinia-plugin-persistedstate": "^1.5.1",
-    "swiper": "^8.1.4"
+    "swiper": "^8.1.4",
+    "vue-skeletor": "^1.0.6"
   }
 }
