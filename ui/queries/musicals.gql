@@ -31,9 +31,14 @@ query musicalsByPreference($preference: PreferenceInput) {
 query musicalById($id: ID) {
   musicalById(id: $id) {
     id
-    name
+		name
     theatre {
       webURL
+    }
+    actors {
+      firstName
+      lastName
+      birthDate
     }
   }
 }

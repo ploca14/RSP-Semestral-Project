@@ -3,6 +3,10 @@
     <h1 class="text-xl font-medium text-purple-800 mb-8">
       {{ musical.name }}
     </h1>
+    
+    <div v-for="actor in  musical.actors" :key="actor">
+      {{ actor.firstName }}
+    </div>
     <NuxtLink
       :to="musical.theatre.webURL"
       target="_blank"
