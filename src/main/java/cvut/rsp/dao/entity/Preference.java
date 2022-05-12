@@ -16,29 +16,41 @@ import java.util.Set;
 public class Preference extends AbstractEntity
 {
     @ManyToMany
-    @JoinTable(name = "producers", joinColumns = @JoinColumn(name = "preference_id"), inverseJoinColumns = @JoinColumn(name = "producer_id"))
+    @JoinTable(name = "preference_producer",
+            joinColumns = @JoinColumn(name = "preference_id"),
+            inverseJoinColumns = @JoinColumn(name = "producer_id"))
     private List<Producer> producers;
 
     @ManyToMany
-    @JoinTable(name = "actors", joinColumns = @JoinColumn(name = "preference_id"), inverseJoinColumns = @JoinColumn(name = "actor_id"))
+    @JoinTable(name = "preference_actor",
+            joinColumns = @JoinColumn(name = "preference_id"),
+            inverseJoinColumns = @JoinColumn(name = "actor_id"))
     private List<Actor> actors;
 
     @ManyToMany
-    @JoinTable(name = "directors", joinColumns = @JoinColumn(name = "preference_id"), inverseJoinColumns = @JoinColumn(name = "directors_id"))
+    @JoinTable(name = "preference_director",
+            joinColumns = @JoinColumn(name = "preference_id"),
+            inverseJoinColumns = @JoinColumn(name = "director_id"))
     private List<Director> directors;
 
     @ElementCollection(targetClass = MusicalType.class)
-    @CollectionTable(name = "musical_type", joinColumns = @JoinColumn(name = "preference_id"))
+    @JoinTable(name = "musical_type_preference",
+            joinColumns = @JoinColumn(name = "preference_id"))
+    @Column(name = "musical_type", nullable = false)
     @Enumerated(EnumType.STRING)
     private Set<MusicalType> musicalTypes;
 
     @ElementCollection(targetClass = MusicalGenre.class)
-    @CollectionTable(name = "musical_genre", joinColumns = @JoinColumn(name = "preference_id"))
+    @JoinTable(name = "musical_genre_preference",
+            joinColumns = @JoinColumn(name = "preference_id"))
+    @Column(name = "musical_genre", nullable = false)
     @Enumerated(EnumType.STRING)
     private Set<MusicalGenre> musicalGenres;
 
     @ElementCollection(targetClass = MusicalAtmosphere.class)
-    @CollectionTable(name = "musical_atmosphere", joinColumns = @JoinColumn(name = "preference_id"))
+    @JoinTable(name = "musical_atmosphere_preference",
+            joinColumns = @JoinColumn(name = "preference_id"))
+    @Column(name = "musical_atmosphere", nullable = false)
     @Enumerated(EnumType.STRING)
     private Set<MusicalAtmosphere> musicalAtmospheres;
 

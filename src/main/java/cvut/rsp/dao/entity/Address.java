@@ -6,16 +6,15 @@ import javax.persistence.*;
 import java.util.List;
 
 @javax.persistence.Entity
-@Table(name = "addresses")
+@Table(name = "address")
 public class Address extends AbstractEntity
 {
     private String city;
     private String street;
     private int postcode;
 
-    @OneToMany(mappedBy = "address")
-    @OrderBy(value = "name")
-    private List<Theatre> theatres;
+    @OneToOne(mappedBy = "address")
+    private Theatre theatre;
 
     //region getters and setters
     public String getCity() { return city; }
@@ -24,7 +23,7 @@ public class Address extends AbstractEntity
     public void setStreet(String street) { this.street = street; }
     public int getPostcode() { return postcode; }
     public void setPostcode(int postcode) { this.postcode = postcode; }
-    public List<Theatre> getTheatres() { return theatres; }
-    public void setTheatres(List<Theatre> theatres) { this.theatres = theatres; }
+    public Theatre getTheatre() { return theatre; }
+    public void setTheatre(Theatre theatre) { this.theatre = theatre; }
     //endregion
 }

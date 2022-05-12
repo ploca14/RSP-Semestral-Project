@@ -34,15 +34,15 @@ public class FilterService implements IFilterService
     }
 
     //TODO: Implement filtering algorithm
-    //Now it finds musicals by musical ids in preference object
+
     @Override public List<Musical> filter(PreferenceInput preference)
     {
         //TODO: find musicals by preference properties, add them to list and return it
-        var musicals = new ArrayList<Musical>();
 
-        musicals.addAll(iMusicalRepository.findAllById(preference.getMusicals()));
-//        musicals.addAll(iMusicalRepository.findAllByActor(preference.getActors()));
-//        musicals.addAll(iMusicalRepository.findAllByAgeRestriction());
+        List<Musical> musicals = new ArrayList<>();
+
+        List<Long> musicalsId = iMusicalRepository.getMusicalsIdsByActorId(6L);
+        musicals.addAll(iMusicalRepository.findAllById(musicalsId));
 
         return musicals;
     }

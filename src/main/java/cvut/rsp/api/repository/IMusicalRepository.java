@@ -15,6 +15,9 @@ public interface IMusicalRepository extends JpaRepository<Musical, Long>
     @Query(value = "SELECT Musical.id FROM Musical", nativeQuery = true)
     List<Long> getAllIds();
 
+    @Query(value = "SELECT m.musical_id FROM Musicals m WHERE m.actor_id = :actorId", nativeQuery = true)
+    List<Long> getMusicalsIdsByActorId(@Param("actorId") Long actorId);
+
     //TODO: Write custom queries
 //    @Query(value = "SELECT * FROM Musical AS m WHERE m.id IN :#{#preference.musicals}", nativeQuery = true)
 //    List<Musical> findAllByPreference(@Param("preference") PreferenceInput preference);

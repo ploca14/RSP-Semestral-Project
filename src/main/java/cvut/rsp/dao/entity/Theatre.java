@@ -6,13 +6,13 @@ import javax.persistence.*;
 import java.util.List;
 
 @javax.persistence.Entity
-@Table(name = "theatres")
+@Table(name = "theatre")
 public class Theatre extends AbstractEntity
 {
     private String name;
     private String webURL;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "address_id")
     private Address address;
 
