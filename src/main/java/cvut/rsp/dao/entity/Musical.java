@@ -25,7 +25,7 @@ public class Musical extends AbstractEntity
     @JoinColumn(name = "theatre_id")
     private Theatre theatre;
 
-    @ManyToMany(mappedBy = "musicals")
+    @OneToMany(mappedBy = "musical")
     private List<Performance> performances;
 
     @ManyToMany(mappedBy = "musicals")
@@ -38,17 +38,23 @@ public class Musical extends AbstractEntity
     private List<Director> directors;
 
     @ElementCollection(targetClass = MusicalType.class)
-    @CollectionTable(name = "musical_type", joinColumns = @JoinColumn(name = "musical_id"))
+    @JoinTable(name = "musical_type_musical",
+            joinColumns = @JoinColumn(name = "musical_id"))
+    @Column(name = "musical_type", nullable = false)
     @Enumerated(EnumType.STRING)
     private Set<MusicalType> musicalTypes;
 
     @ElementCollection(targetClass = MusicalGenre.class)
-    @CollectionTable(name = "musical_genre", joinColumns = @JoinColumn(name = "musical_id"))
+    @JoinTable(name = "musical_genre_musical",
+            joinColumns = @JoinColumn(name = "musical_id"))
+    @Column(name = "musical_genre", nullable = false)
     @Enumerated(EnumType.STRING)
     private Set<MusicalGenre> musicalGenres;
 
     @ElementCollection(targetClass = MusicalAtmosphere.class)
-    @CollectionTable(name = "musical_atmosphere", joinColumns = @JoinColumn(name = "musical_id"))
+    @JoinTable(name = "musical_atmosphere_musical",
+            joinColumns = @JoinColumn(name = "musical_id"))
+    @Column(name = "musical_atmosphere", nullable = false)
     @Enumerated(EnumType.STRING)
     private Set<MusicalAtmosphere> musicalAtmospheres;
 

@@ -16,7 +16,9 @@ public class Actor extends Person
     private List<Preference> preferences;
 
     @ManyToMany
-    @JoinTable(name = "musicals", joinColumns = @JoinColumn(name = "actor_id"), inverseJoinColumns = @JoinColumn(name = "musical_id"))
+    @JoinTable(name = "actor_musical",
+            joinColumns = @JoinColumn(name = "actor_id"),
+            inverseJoinColumns = @JoinColumn(name = "musical_id"))
     private List<Musical> musicals;
 
     //region getters and setters
