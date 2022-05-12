@@ -41,8 +41,9 @@ public class FilterService implements IFilterService
 
         List<Musical> musicals = new ArrayList<>();
 
-        List<Long> musicalsId = iMusicalRepository.getMusicalsIdsByActorId(6L);
-        musicals.addAll(iMusicalRepository.findAllById(musicalsId));
+        List<Long> musicalsIds = iMusicalRepository.getAllIds();
+
+        musicalsIds.forEach(e -> musicals.add(iMusicalRepository.findById(e).get()));
 
         return musicals;
     }
