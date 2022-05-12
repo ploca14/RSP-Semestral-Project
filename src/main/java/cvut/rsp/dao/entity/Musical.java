@@ -21,6 +21,8 @@ public class Musical extends AbstractEntity
 
     private String description;
 
+    private boolean withChildren;
+
     @ManyToOne
     @JoinColumn(name = "theatre_id")
     private Theatre theatre;
@@ -81,5 +83,11 @@ public class Musical extends AbstractEntity
     public void setMusicalGenres(Set<MusicalGenre> musicalGenres) { this.musicalGenres = musicalGenres; }
     public Set<MusicalAtmosphere> getMusicalAtmospheres() { return musicalAtmospheres; }
     public void setMusicalAtmospheres(Set<MusicalAtmosphere> musicalAtmospheres) { this.musicalAtmospheres = musicalAtmospheres; }
+    public boolean isWithChildren() {
+        return withChildren;
+    }
+    public void setWithChildren(boolean withChildren) {
+        this.withChildren = withChildren;
+    }
     //endregion
 }
