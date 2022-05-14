@@ -12,3 +12,9 @@ type Musical
     musicalGenres: [MusicalGenre]!,
     musicalAtmospheres: [MusicalAtmosphere]!
 }
+
+input SortInput
+{
+    musicals: [Int!]!
+    ascending: Boolean!
+}

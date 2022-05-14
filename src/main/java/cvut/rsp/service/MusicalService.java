@@ -5,10 +5,12 @@ import cvut.rsp.api.service.IMusicalService;
 import cvut.rsp.api.service.IPreferenceService;
 import cvut.rsp.dao.entity.Musical;
 import cvut.rsp.graphql.input.PreferenceInput;
+import cvut.rsp.graphql.input.SortInput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -36,6 +38,16 @@ public class MusicalService implements IMusicalService
         if(musicals.isEmpty()) { return randomMusicals(LIMIT); }
 
         return musicals;
+    }
+
+    @Transactional(readOnly = true)
+    @Override public List<Musical> sortMusicalsByPrice(SortInput sortInput){
+        return iFilterService.sortMusicalsByPrice(sortInput);
+    }
+
+    @Transactional(readOnly = true)
+    @Override public List<Musical> sortMusicalsByDate(SortInput sortInput){
+        return iFilterService.sortMusicalsByDate(sortInput);
     }
 
     //TODO: Implement random filtering

@@ -10,6 +10,10 @@ type Query
 
     musicalsByPreference(preference: PreferenceInput): [Musical!]!
 
+    sortMusicalsByPrice(sortInput: SortInput): [Musical!]!
+
+    sortMusicalsByDate(sortInput: SortInput): [Musical!]!
+
     actors: [Actor!]!
     directors: [Director!]!
     producers: [Producer!]!
