@@ -1,0 +1,88 @@
+query actors {
+  actors {
+    id
+    firstName
+    lastName
+  }
+}
+
+query musicals($limit: Int = 10) {
+  musicals(limit: $limit) {
+    id
+    name
+    imageSource
+  }
+}
+
+input PreferenceInput
+{
+  musicals: [Int!]!
+  actors: [Int!]!
+  withChildren: Boolean
+}
+
+query musicalsByPreference($preference: PreferenceInput) {
+  musicalsByPreference(preference: $preference) {
+    id
+    name
+  }
+}
+
+query musicalById($id: ID) {
+  musicalById(id: $id) {
+    id
+		name
+    imageSource
+    musicalTypes
+    musicalGenres
+    musicalAtmospheres
+    theatre {
+      id
+      name
+    }
+    actors {
+      firstName
+      lastName
+    }
+    producers {
+      firstName
+      lastName
+    }
+    directors {
+      firstName
+      lastName
+    }
+    performances {
+      date
+      tickets {
+        price
+        seat {
+          row
+          number
+          available
+        }
+      }
+      
+    }
+  }
+}
+
+input SortInput
+{
+    musicals: [Int!]!
+    ascending: Boolean!
+}
+
+query sortMusicalsByPrice($sortInput: SortInput) {
+  sortMusicalsByPrice(sortInput: $sortInput) {
+    id
+    name
+  }
+}
+
+query sortMusicalsByDate($sortInput: SortInput) {
+  sortMusicalsByDate(sortInput: $sortInput) {
+    id
+    name
+  }
+}

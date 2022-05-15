@@ -14,7 +14,7 @@
         </NuxtLink>
       </nav>
     </header>
-    <main class="flex-grow p-4 flex flex-col">
+    <main class="flex-grow px-8 py-4 flex flex-col">
       <slot />
     </main>
   </div>
