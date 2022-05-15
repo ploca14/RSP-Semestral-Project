@@ -28,6 +28,7 @@
       <NuxtLink
         to="/musicals"
         class="bg-yellow-500 py-2.5 px-6 rounded font-medium"
+        @click.native="handleClick"
       >
         Dokončit
       </NuxtLink>
@@ -36,14 +37,18 @@
 </template>
 
 <script setup lang="ts">
-const { preferences, setWithChildren } = usePreferencesStore();
+const { preferences, setWithChildren, setIsOnboardingFinished } = usePreferencesStore();
 
 const handleYes = () => {
   setWithChildren(true);
-}
+};
 
 
 const handleNo = () => {
   setWithChildren(false);
-}
+};
+
+const handleClick = () => {
+  setIsOnboardingFinished(true);
+};
 </script>

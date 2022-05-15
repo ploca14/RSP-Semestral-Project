@@ -32,13 +32,57 @@ query musicalById($id: ID) {
   musicalById(id: $id) {
     id
 		name
+    imageSource
+    musicalTypes
+    musicalGenres
+    musicalAtmospheres
     theatre {
-      webURL
+      id
+      name
     }
     actors {
       firstName
       lastName
-      birthDate
     }
+    producers {
+      firstName
+      lastName
+    }
+    directors {
+      firstName
+      lastName
+    }
+    performances {
+      date
+      tickets {
+        price
+        seat {
+          row
+          number
+          available
+        }
+      }
+      
+    }
+  }
+}
+
+input SortInput
+{
+    musicals: [Int!]!
+    ascending: Boolean!
+}
+
+query sortMusicalsByPrice($sortInput: SortInput) {
+  sortMusicalsByPrice(sortInput: $sortInput) {
+    id
+    name
+  }
+}
+
+query sortMusicalsByDate($sortInput: SortInput) {
+  sortMusicalsByDate(sortInput: $sortInput) {
+    id
+    name
   }
 }

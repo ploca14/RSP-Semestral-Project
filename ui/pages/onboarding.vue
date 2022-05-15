@@ -20,7 +20,6 @@
 
 <script setup lang="ts">
 import { EmojiHappyIcon, StarIcon, UserGroupIcon } from "@heroicons/vue/outline";
-import { useScroll } from "@vueuse/core";
 
 const route = useRoute()
 
